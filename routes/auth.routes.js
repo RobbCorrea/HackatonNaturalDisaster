@@ -20,6 +20,14 @@ router.get('/', async (req, res) => {
 });
 
 
+router.get('/register', async (req, res) => {
+
+
+
+ res.render('index');
+ 
+});
+
 /**
  * @desc Create an user
  * @route POST /signup
