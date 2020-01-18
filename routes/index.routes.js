@@ -10,10 +10,11 @@ const {protect, authorize} = require('../middlewares/auth.middleware');
  * @access Private
  */
 
-router.get('/', [protect, authorize('IRONHACKER', 'STAFF')], async (req, res) => {
+router.get('/', async (req, res) => {
 
     try {
         const user = req.session.currentUser;
+        
         const post = await Post.find().sort({createdAt: -1}).populate({path: 'comments', populate: {path: 'author'}}).populate('author');
         res.render('feed', {user, post});
 

@@ -12,9 +12,8 @@ const User = require('../models/user.model');
 
 router.get('/', async (req, res) => {
 
-    if (req.session.currentUser && req.session.currentUser !== undefined) {
-        res.redirect("/feed");
-    }
+       res.redirect("/feed");
+
 
     res.render('index');
     
