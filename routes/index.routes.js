@@ -3,9 +3,8 @@ const router = require('express').Router();
 const Post = require('../models/post.model');
 const {protect, authorize} = require('../middlewares/auth.middleware');
 
-
 /**
- * @desc Feed page
+ * @desc Feed pageå
  * @route GET /feed
  * @access Private
  */
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
 
     try {
         const user = req.session.currentUser;
-        
         const post = await Post.find().sort({createdAt: -1}).populate({path: 'comments', populate: {path: 'author'}}).populate('author');
         res.render('feed', {user, post});
 
@@ -24,6 +22,15 @@ router.get('/', async (req, res) => {
     
 });
 
+router.get('/map', async (req, res) => {
+    console.log('hola')
+    try {
+        res.render('map');
+    } catch (err) {
+        console.error(err);
+    }
+
+});
 
 /**
  * @desc Get a post
@@ -51,9 +58,9 @@ router.get('/post/:postId', [protect, authorize('IRONHACKER', 'STAFF')], async (
  * @access Private
  */
 
-router.post('/', [protect, authorize('IRONHACKER', 'STAFF')], async (req, res) => {
+router.post('/', async (req, res) => {
 
-    const {content} = req.body
+    const {content} = req.body;
     await Post.create({content, author: req.session.currentUser});
     res.redirect('/feed');
 

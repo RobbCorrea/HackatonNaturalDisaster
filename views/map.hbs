@@ -1,0 +1,27 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Map</title>
+    <style>
+       .map {
+        height: 50vh;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My First Map</h3>
+    <div id="map"></div>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmcWV6CuHluOdNbYa8G2SQhJWJfkmsCHE"></script>
+    <script src="https://assets.what3words.com/sdk/v3/what3words.js?key=GWJXHD1M"></script>
+    <script type="text/javascript" src="../js/geolocation.js"></script>
+  </body>
+</html>

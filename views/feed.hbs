@@ -15,6 +15,13 @@
 
 </head>
 <body>
+    <style>
+       .map {
+        height: 50vh;
+        width: 100%;
+       }
+    </style>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmcWV6CuHluOdNbYa8G2SQhJWJfkmsCHE"></script>
 <!--<div class="se-pre-con"></div>-->
 <div class="theme-layout">
 	<div class="postoverlay"></div>
@@ -25,6 +32,7 @@
 			</span>
 			<span class="mh-text">
 				<a href="/feed" title="">Ayura :(</a>
+				<img src="../images/logo_aiuda_head.png" alt="Logo Aiuda">
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -112,7 +120,8 @@
 	
 	<div class="topbar stick">
 		<div class="logo">
-			<a href="/feed" title="">Ayura :(</a>
+			<a href="/feed" title=""></a>
+			<img src="../images/logo_aiuda_head.png" alt="Logo Aiuda">
 		</div>
 		
 		<div class="top-area">
@@ -180,8 +189,8 @@
 											<li>
 												<div class="activity-meta">
 													<i>10 hours Ago</i>
-													<span><a href="#" title="">Commented on Video posted </a></span>
-													<h6>by <a href="time-line.html">black demon.</a></h6>
+													<span><a href="#" title="">Said commented on post by</a></span>
+													<h6>by <a href="time-line.html">Majo.</a></h6>
 												</div>
 											</li>
 											<li>
@@ -193,8 +202,8 @@
 											<li>
 												<div class="activity-meta">
 													<i>2 Years Ago</i>
-													<span><a href="#" title="">Share a video on her timeline.</a></span>
-													<h6>"<a href="#">you are so funny mr.been.</a>"</h6>
+													<span><a href="#" title="">Shared a post on her timeline.</a></span>
+													<h6>"<a href="#">you are so funny Andrés.</a>"</h6>
 												</div>
 											</li>
 										</ul>
@@ -266,6 +275,9 @@
 												<div class="friend-name">
 													<ins><a href="time-line.html" title="">{{this.author.name}}</a></ins>
 													<span>{{dateFormat this.createdAt "dddd, MMMM DD YYYY, h:mm:ss"}}</span>
+													<img src="../images/Grupo 2418.png">
+												</div>
+												<div class="map" id="map-{{@index}}">
 												</div>
 												<div class="post-meta">
 													{{#ifCond this.type "PHOTO" }}
@@ -400,19 +412,9 @@
 										</div>
 									</div><!-- page like widget -->
 									<div class="widget">
-										<div class="banner medium-opacity bluesh">
-											<div class="bg-image" style="background-image: url(images/resources/baner-widgetbg.jpg)"></div>
-											<div class="baner-top">
-												<span><img alt="" src="images/book-icon.png"></span>
-												<i class="fa fa-ellipsis-h"></i>
-											</div>
-											<div class="banermeta">
-												<p>
-													create your own favourit page.
-												</p>
-												<span>like them all</span>
-												<a data-ripple="" title="" href="#">start now!</a>
-											</div>
+										<div class="banner">
+										
+											<img src="../images/Grupo 2414.png">
 										</div>											
 									</div>
 									<div class="widget friend-list stick-widget">
@@ -740,6 +742,7 @@
 	<script src="js/script.js"></script>
 	<script src="js/map-init.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+	<script type="text/javascript" src="../js/geolocation.js"></script>
 
 </body>	
 </html>
